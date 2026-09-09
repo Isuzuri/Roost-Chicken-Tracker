@@ -20,7 +20,7 @@ export default function Header({ isDark, onThemeChange }: HeaderProps) {
       }}
     >
       <div style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }}>
-        <Tooltip title={isDark ? 'Светлая тема' : 'Тёмная тема'}>
+        <Tooltip title={isDark ? 'Dark theme' : 'Light theme'}>
           <Switch
             checked={isDark}
             onChange={onThemeChange}
@@ -30,10 +30,9 @@ export default function Header({ isDark, onThemeChange }: HeaderProps) {
         </Tooltip>
       </div>
       <div>
-        <Title level={2} style={{ margin: 0 }}>
+        <Title level={1} style={{ margin: 0 }}>
           🐔 Roost Chicken Tracker
         </Title>
-        <Text type="secondary">Отслеживание созданных куриц из мода Roost</Text>
       </div>
     </div>
   );

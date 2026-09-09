@@ -16,7 +16,7 @@ export default function Search({ value, onChange, foundCount, totalCount }: Sear
       <Space direction="vertical" style={{ width: '100%' }}>
         <Input
           prefix={<SearchOutlined />}
-          placeholder="Поиск по имени или родителям (напр. emerald, diamond)..."
+          placeholder="Search by name or parent"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           allowClear

@@ -12,6 +12,7 @@ const tierColors: Record<number, string> = {
   6: 'magenta',
   7: 'cyan',
   8: 'gold',
+  9: 'brown'
 };
 
 const tierNames: Record<number, string> = {
@@ -23,6 +24,7 @@ const tierNames: Record<number, string> = {
   6: 'Tier 6',
   7: 'Tier 7',
   8: 'Tier 8',
+  9: 'Tier 9'
 };
 
 interface StatisticsProps {
@@ -60,7 +62,7 @@ export default function Statistics({
         <Space direction="vertical" style={{ width: '100%' }} size="middle">
           <div>
             <Title level={5} style={{ margin: 0, marginBottom: 12 }}>
-              📊 Статистика
+              📊 Statistics
             </Title>
             <Progress
               percent={progressPercent}
@@ -75,17 +77,17 @@ export default function Statistics({
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Text type="secondary">Всего куриц:</Text>
+              <Text type="secondary">Total:</Text>
               <Text strong>{totalChickens}</Text>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Text type="secondary">Готово:</Text>
+              <Text type="secondary">Completed:</Text>
               <Text strong style={{ color: '#52c41a' }}>
                 {completedCount}
               </Text>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Text type="secondary">Осталось:</Text>
+              <Text type="secondary">Remaining</Text>
               <Text strong style={{ color: '#faad14' }}>
                 {totalChickens - completedCount}
               </Text>
@@ -101,14 +103,11 @@ export default function Statistics({
               gap: 8,
             }}
           >
-            <Text type="secondary" style={{ fontSize: 12 }}>
-              Типы получения:
-            </Text>
             <div style={{ display: 'flex', gap: 8 }}>
               <Tag color="geekblue" icon={<CheckCircleOutlined />}>
                 Breed: {breedingCount}
               </Tag>
-              <Tag color="default" icon={<ClockCircleOutlined />}>
+              <Tag color="default" icon={<span>🚫</span>}>
                 No Breed: {noBreedCount}
               </Tag>
             </div>
@@ -120,9 +119,6 @@ export default function Statistics({
               paddingTop: 12,
             }}
           >
-            <Text type="secondary" style={{ fontSize: 12, marginBottom: 8, display: 'block' }}>
-              По Tier:
-            </Text>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {tiers.map((tier) => {
                 const { completed, total } = tierStats[tier];

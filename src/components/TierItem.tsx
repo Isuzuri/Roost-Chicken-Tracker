@@ -48,7 +48,6 @@ export default function TierItem({ chicken, isCompleted, onToggle }: TierItemPro
           </div>
         </Space>
         <Space wrap>
-          {chicken.MobOrMonster === 'Monster' && <Tag color="volcano">Monster</Tag>}
           <BreedingBadge chickenId={chicken.id} />
         </Space>
       </div>

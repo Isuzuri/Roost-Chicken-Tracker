@@ -15,17 +15,7 @@ const tierColors: Record<number, string> = {
   6: 'magenta',
   7: 'cyan',
   8: 'gold',
-};
-
-const tierNames: Record<number, string> = {
-  1: 'Tier 1 — Базовые',
-  2: 'Tier 2 — Ресурсы',
-  3: 'Tier 3 — Металлы',
-  4: 'Tier 4 — Редкие',
-  5: 'Tier 5 — Легендарные',
-  6: 'Tier 6 — Мифические',
-  7: 'Tier 7 — Крафтовые',
-  8: 'Tier 8 — Божественные',
+  9: 'brown'
 };
 
 interface TierListProps {
@@ -52,7 +42,7 @@ export default function TierList({
   if (tiers.length === 0) {
     return (
       <Card>
-        <Text type="secondary">Ничего не найдено по запросу «{searchQuery}»</Text>
+        <Text type="secondary">No data by query «{searchQuery}»</Text>
       </Card>
     );
   }
@@ -74,8 +64,7 @@ export default function TierList({
             header={
               <Space>
                 <Tag color={tierColors[tier] || 'default'}>Tier {tier}</Tag>
-                <Text strong>{tierNames[tier] || `Tier ${tier}`}</Text>
-                <Tooltip title={`${tierCompleted} из ${tierTotal} готово`}>
+                <Tooltip title={`${tierCompleted} of ${tierTotal} complete`}>
                   <Tag
                     icon={allTierDone ? <CheckCircleOutlined /> : <ClockCircleOutlined />}
                     color={allTierDone ? 'success' : 'processing'}
@@ -86,7 +75,7 @@ export default function TierList({
               </Space>
             }
             extra={
-              <Tooltip title={allTierDone ? 'Снять всё' : 'Отметить всё'}>
+              <Tooltip title={allTierDone ? 'Deselect all' : 'Select all'}>
                 <div
                   onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();

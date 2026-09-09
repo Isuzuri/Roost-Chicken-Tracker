@@ -18,7 +18,7 @@ export default function Footer({ isDark }: FooterProps) {
       }}
     >
       <Text type="secondary" style={{ fontSize: 12 }}>
-        Сборка Stoneblock 4 • Версия конфига Roost — v7
+        Modpack Stoneblock 4 • Roost config — v7
       </Text>
     </div>
   );
