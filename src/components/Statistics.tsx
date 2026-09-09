@@ -12,7 +12,7 @@ const tierColors: Record<number, string> = {
   6: 'magenta',
   7: 'cyan',
   8: 'gold',
-  9: 'brown'
+  9: 'volcano'
 };
 
 const tierNames: Record<number, string> = {
